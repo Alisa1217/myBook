@@ -1,0 +1,46 @@
+node的工具可以将es6的代码转成es5的代码
+
+1、安装nodejs
+
+    cmd下输入以下命令
+
+    1）安装babel-cli工具： npm install --global babel-cli
+
+    2）安装webpack： npm install webpack -g
+
+2、打开项目根目录文件夹
+
+     shift+鼠标右键打开当前命令窗口
+
+   输入以下命令：
+    1）echo { presets: ["es2015"] }> .babelrc  创建文件
+
+    2）npm install --save-dev babel-loader babel-core
+
+    3）npm install babel-preset-es2015 --save-dev
+
+	
+3、在根目录下新建一个js文件：webpack.config.js
+	放入以下内容
+	module.exports = {	
+		entry:{a:"./es6/main.js"},	
+		output:{path:__dirname,filename:"[name].js"},	
+		module: {loaders: [{ test: /\.js$/, exclude: /node_modules/, loader: 			"babel-loader" } ]}
+	}
+
+4、在根目录中新建两个文件夹，分别为es6、es5
+
+	在es6文件夹下新建一个js文件,例如：main.js，写入内容
+
+5、修改webpack.config.js的内容
+
+	entry:{a:"./es6/main.js"}
+	  1）a为将要转成的文件名，如：index;
+
+	  2）main.js为新建的js文件名;
+
+	output:{path:__dirname,filename:"[name].js"}
+
+	  [name].js前面要加es5，即es5/[name].js
+
+6、最后输入webpack回车，就能生成ES5文件
