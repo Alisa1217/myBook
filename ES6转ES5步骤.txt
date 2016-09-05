@@ -1,46 +1,50 @@
-nodeµÄ¹¤¾ß¿ÉÒÔ½«es6µÄ´úÂë×ª³Ées5µÄ´úÂë
+Nodejsçš„å·¥å…·å¯ä»¥å°†ES6çš„ä»£ç è½¬æˆES5çš„ä»£ç 
 
-1¡¢°²×°nodejs
+1ã€å®‰è£…nodejs
 
-    cmdÏÂÊäÈëÒÔÏÂÃüÁî
+    cmdä¸‹è¾“å…¥ä»¥ä¸‹å‘½ä»¤
 
-    1£©°²×°babel-cli¹¤¾ß£º npm install --global babel-cli
+    1ï¼‰å®‰è£…babel-cliå·¥å…·ï¼š npm install --global babel-cli
 
-    2£©°²×°webpack£º npm install webpack -g
+    2ï¼‰å®‰è£…webpackï¼š npm install webpack -g
 
-2¡¢´ò¿ªÏîÄ¿¸ùÄ¿Â¼ÎÄ¼ş¼Ğ
+2ã€æ‰“å¼€é¡¹ç›®æ ¹ç›®å½•æ–‡ä»¶å¤¹
 
-     shift+Êó±êÓÒ¼ü´ò¿ªµ±Ç°ÃüÁî´°¿Ú
+     shift+é¼ æ ‡å³é”®æ‰“å¼€å½“å‰å‘½ä»¤çª—å£
 
-   ÊäÈëÒÔÏÂÃüÁî£º
-    1£©echo { presets: ["es2015"] }> .babelrc  ´´½¨ÎÄ¼ş
+   è¾“å…¥ä»¥ä¸‹å‘½ä»¤ï¼š
+    1ï¼‰echo { presets: ["es2015"] }> .babelrc  åˆ›å»ºæ–‡ä»¶
 
-    2£©npm install --save-dev babel-loader babel-core
+    2ï¼‰npm install --save-dev babel-loader babel-core
 
-    3£©npm install babel-preset-es2015 --save-dev
+    3ï¼‰npm install babel-preset-es2015 --save-dev
 
 	
-3¡¢ÔÚ¸ùÄ¿Â¼ÏÂĞÂ½¨Ò»¸öjsÎÄ¼ş£ºwebpack.config.js
-	·ÅÈëÒÔÏÂÄÚÈİ
-	module.exports = {	
-		entry:{a:"./es6/main.js"},	
-		output:{path:__dirname,filename:"[name].js"},	
+3ã€åœ¨æ ¹ç›®å½•ä¸‹æ–°å»ºä¸€ä¸ªjsæ–‡ä»¶ï¼šwebpack.config.js
+	æ”¾å…¥ä»¥ä¸‹å†…å®¹
+	module.exports = {
+	
+		entry:{a:"./es6/main.js"},
+	
+		output:{path:__dirname,filename:"[name].js"},
+	
 		module: {loaders: [{ test: /\.js$/, exclude: /node_modules/, loader: 			"babel-loader" } ]}
-	}
 
-4¡¢ÔÚ¸ùÄ¿Â¼ÖĞĞÂ½¨Á½¸öÎÄ¼ş¼Ğ£¬·Ö±ğÎªes6¡¢es5
+	}
 
-	ÔÚes6ÎÄ¼ş¼ĞÏÂĞÂ½¨Ò»¸öjsÎÄ¼ş,ÀıÈç£ºmain.js£¬Ğ´ÈëÄÚÈİ
+4ã€åœ¨æ ¹ç›®å½•ä¸­æ–°å»ºä¸¤ä¸ªæ–‡ä»¶å¤¹ï¼Œåˆ†åˆ«ä¸ºes6ã€es5
 
-5¡¢ĞŞ¸Äwebpack.config.jsµÄÄÚÈİ
+	åœ¨es6æ–‡ä»¶å¤¹ä¸‹æ–°å»ºä¸€ä¸ªjsæ–‡ä»¶,ä¾‹å¦‚ï¼šmain.jsï¼Œå†™å…¥å†…å®¹
+
+5ã€ä¿®æ”¹webpack.config.jsçš„å†…å®¹
 
 	entry:{a:"./es6/main.js"}
-	  1£©aÎª½«Òª×ª³ÉµÄÎÄ¼şÃû£¬Èç£ºindex;
+	  1ï¼‰aä¸ºå°†è¦è½¬æˆçš„æ–‡ä»¶åï¼Œå¦‚ï¼šindex;
 
-	  2£©main.jsÎªĞÂ½¨µÄjsÎÄ¼şÃû;
+	  2ï¼‰main.jsä¸ºæ–°å»ºçš„jsæ–‡ä»¶å;
 
 	output:{path:__dirname,filename:"[name].js"}
 
-	  [name].jsÇ°ÃæÒª¼Óes5£¬¼´es5/[name].js
+	  [name].jså‰é¢è¦åŠ es5ï¼Œå³es5/[name].js
 
-6¡¢×îºóÊäÈëwebpack»Ø³µ£¬¾ÍÄÜÉú³ÉES5ÎÄ¼ş
+6ã€æœ€åè¾“å…¥webpackå›è½¦ï¼Œå°±èƒ½ç”ŸæˆES5æ–‡ä»¶
